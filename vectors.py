@@ -28,9 +28,22 @@ def getitem(vec_instance, element_of_D):
 	else:
 		return 0
 
+# Create a dot/scalar product from two lists of vectors
+def list_dot(list1, list2):
+	if len(list1) != len(list2):
+		return "These lists are not equal, please try again."
+	else:
+		return sum([list1[vectors] * list2[vectors] for vectors in range(len(list1))])
+
 # Creates a vector instance with list element indices acting as keys and the elements themselves acting as values.  
 def list2vec(input_list):
 	number = 0
 	return Vec(set(range(len(input_list))), {key:value for key,value in enumerate(input_list)})
 
 TestVector = Vec({'A', 'B', 'C'}, {'A':1.})
+
+TestList1 = [1, 2, 3, 4, 5]
+TestList2 = [6, 7, 8, 9, 10]
+TestList3 = [2, 4, 6]
+
+print(list_dot(TestList1, TestList2))
