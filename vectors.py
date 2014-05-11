@@ -40,10 +40,18 @@ def list2vec(input_list):
 	number = 0
 	return Vec(set(range(len(input_list))), {key:value for key,value in enumerate(input_list)})
 
-TestVector = Vec({'A', 'B', 'C'}, {'A':1.})
+# For solving a triangular system of linear equations
+def triangluar_solve(rowlist, label_list, b):
+	x = zero_vec(set(label_list))
+	for r in reversed(range(len(rowlist))):
+		c = label_list[r]
+		x[c] = (b[r] - x*rowlist[r])/rowlist[r][c]
+	return x
 
+# For testing out list2vec
 TestList1 = [1, 2, 3, 4, 5]
 TestList2 = [6, 7, 8, 9, 10]
 TestList3 = [2, 4, 6]
 
-print(list_dot(TestList1, TestList2))
+# Test vector instance
+TestVector = Vec({'A', 'B', 'C'}, {'A':1.})
