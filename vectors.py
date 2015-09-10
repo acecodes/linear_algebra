@@ -148,14 +148,15 @@ class Matrix:
         return [A_i[j] for A_i in A]
 
 
-# For testing out list2vec
-TestList1 = [1, 2, 3, 4, 5]
-TestList2 = [6, 7, 8, 9, 10]
-TestList3 = [2, 4, 6]
+if __name__ == '__main__':
+    # For testing out list2vec
+    TestList1 = [1, 2, 3, 4, 5]
+    TestList2 = [6, 7, 8, 9, 10]
+    TestList3 = [2, 4, 6]
 
-# Test vector instance
-TestVector = Vector({'A', 'B', 'C'}, {'A': 1})
+    # Test vector instance
+    TestVector = Vector({'A', 'B', 'C'}, {'A': 1})
 
-# Test matrix instance
-TestMatrix = Matrix(5, 5, Matrix.is_diagonal)
-print(TestMatrix.matrix)
+    # Test matrix instance
+    TestMatrix = Matrix(5, 5, Matrix.is_diagonal)
+    print(TestMatrix.matrix)
